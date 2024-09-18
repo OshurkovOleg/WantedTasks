@@ -1,15 +1,17 @@
 Проверку скриптов Java осуществляем из класса WantedTaskApplication
 
 Решение по SQL(задача и структура таблиц ниже)
+
+```
 SELECT rg.name AS ФИО,
 rg.birthDate AS Дата_рождения,
 pd.contactRelationship AS Родственная_связь
 FROM HPPersonDependant pd
 JOIN HPPersonGeneric rg ON pd.HPRelatedPersonSysId = rg.sysId
-WHERE
-pd.HPPersonGenericSysId = (SELECT sysId 
-                            FROM HPPersonGeneric 
-                            WHERE personId = 'test');
+WHERE pd.HPPersonGenericSysId = (SELECT sysId 
+                                 FROM HPPersonGeneric 
+                                 WHERE personId = 'test');
+```
 
 Скрипты на Java
 Задача 1
